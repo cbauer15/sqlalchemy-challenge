@@ -24,6 +24,7 @@ Station = Base.classes.station
 @app.route("/")
 def welcome():
     return (
+        f"Hello! Welcome to the Site!<br/>"
         f"Available Routes:<br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/lastyearprecipitation<br/>"
@@ -130,9 +131,6 @@ def startenddate(start, end):
     session.close()
     start_end_tobs = list(np.ravel(results))
     return jsonify(start_end_tobs)    
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
